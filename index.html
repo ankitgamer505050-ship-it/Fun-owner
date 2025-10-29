@@ -1,0 +1,209 @@
+
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Color Trading King</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <!-- Meta Pixel Code -->
+    <script>
+    !function(f,b,e,v,n,t,s)
+    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+    n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t,s)}(window, document,'script',
+    'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '1633328267629029');
+    fbq('track', 'PageView');
+    </script>
+    <noscript><img height="1" width="1" style="display:none"
+    src="https://www.facebook.com/tr?id=1633328267629029&ev=PageView&noscript=1"
+    /></noscript>
+    <!-- End Meta Pixel Code -->
+    <style>
+        body {
+            font-family: 'Poppins', Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #000;
+            color: #fff;
+            text-align: center;
+            direction: ltr; /* For mixed Hindi/English */
+            overflow-x: hidden;
+        }
+        .container {
+            max-width: 400px;
+            margin: 0 auto;
+            padding: 20px;
+            animation: fadeIn 1s ease-in-out;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .logo {
+            width: 250px;
+            height: 250px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin: 20px auto;
+            display: block;
+            border: 3px solid #ffd700;
+            animation: rotateAndGlow 3s linear infinite, bounceIn 1s ease-out 0.5s both;
+        }
+        @keyframes rotateAndGlow {
+            0% { box-shadow: 0 0 5px #ffd700; }
+            50% { box-shadow: 0 0 20px #ffd700, 0 0 30px #ffd700; }
+            100% { box-shadow: 0 0 5px #ffd700; }
+        }
+        @keyframes bounceIn {
+            0% { transform: scale(0.3); opacity: 0; }
+            50% { transform: scale(1.05); }
+            70% { transform: scale(0.9); }
+            100% { transform: scale(1); opacity: 1; }
+        }
+        .subtitle {
+            font-size: 1.1em;
+            font-weight: 600;
+            margin: 10px 0;
+            color: #fff;
+            animation: slideInUp 1s ease-out 1s both;
+        }
+        @keyframes slideInUp {
+            from { transform: translateY(30px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+        .loss-bar {
+            background-color: #ffd700;
+            color: #000;
+            padding: 10px;
+            margin: 20px 0;
+            font-weight: 700;
+            border-radius: 5px;
+            animation: pulse 2s ease-in-out infinite, slideInUp 1s ease-out 1.2s both;
+        }
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+        .join-btn {
+            display: inline-block;
+            background-color: #007bff;
+            color: white;
+            padding: 15px 30px;
+            text-decoration: none;
+            border-radius: 25px;
+            font-size: 1.2em;
+            font-weight: 600;
+            margin: 20px 0;
+            transition: background-color 0.3s;
+            width: 100%;
+            box-sizing: border-box;
+            animation: slideInUp 1s ease-out 1.4s both;
+        }
+        .join-btn:hover {
+            background-color: #0056b3;
+            transform: scale(1.02);
+        }
+        .urgency {
+            color: #ff0000;
+            font-weight: 700;
+            margin: 10px 0;
+            border-bottom: 2px dotted #ff0000;
+            animation: slideInUp 1s ease-out 1.6s both, flash 1.5s infinite;
+        }
+        @keyframes flash {
+            0%, 50%, 100% { opacity: 1; }
+            25%, 75% { opacity: 0.5; }
+        }
+        .features {
+            list-style: none;
+            padding: 0;
+            margin: 20px 0;
+        }
+        .features li {
+            background: #333;
+            margin: 10px 0;
+            padding: 10px;
+            border-radius: 5px;
+            position: relative;
+            text-align: left;
+            animation: slideInLeft 1s ease-out both;
+            opacity: 0;
+            font-weight: 500;
+        }
+        .features li:nth-child(1) { animation-delay: 1.8s; }
+        .features li:nth-child(2) { animation-delay: 2s; }
+        .features li:nth-child(3) { animation-delay: 2.2s; }
+        .features li:nth-child(4) { animation-delay: 2.4s; }
+        @keyframes slideInLeft {
+            from { transform: translateX(-50px); opacity: 0; }
+            to { transform: translateX(0); opacity: 1; }
+        }
+        .features li::before {
+            content: "✓";
+            color: #007bff;
+            font-weight: bold;
+            position: absolute;
+            left: 10px;
+        }
+        .features li span {
+            padding-left: 20px;
+            display: block;
+        }
+        .register-btn {
+            display: inline-block;
+            background-color: #666;
+            color: white;
+            padding: 15px 30px;
+            text-decoration: none;
+            border-radius: 25px;
+            font-size: 1.2em;
+            font-weight: 600;
+            margin: 20px 0;
+            width: 100%;
+            box-sizing: border-box;
+            animation: slideInUp 1s ease-out 2.6s both;
+        }
+        .register-btn:hover {
+            background-color: #555;
+            transform: scale(1.02);
+        }
+        @media (max-width: 480px) {
+            .container {
+                padding: 10px;
+            }
+            .logo {
+                width: 200px;
+                height: 200px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <img src="https://i.ibb.co/KxDF1SmN/IMG-20251029-181942-794.jpg" alt="Color Trading King Logo" class="logo">
+        
+        <p class="subtitle">Telegram का सबसे ज्यादा नंबर विन देने वाला चैनल</p>
+        
+        <div class="loss-bar">Loss Recovery King 100%</div>
+        
+        <a href="https://t.me/+sY8ulIhaeGcwODNl" class="join-btn" target="_blank">ᴊᴏɪɴ ᴏᴜʀ ᴛᴇʟᴇɢʀᴀᴍ ᴄʜᴀɴᴇʟ</a>
+        
+        <p class="urgency">Telegram Free Joining Ends In ......</p>
+        
+        <ul class="features">
+            <li><span>Daily Gift Code Available</span></li>
+            <li><span>Daily Number Shot Win</span></li>
+            <li><span>Loss Recovery King Strategy</span></li>
+            <li><span>Free Hack App Available</span></li>
+        </ul>
+        
+        <a href="http://www.tashanwin.co/#/register?invitationCode=264452595715" class="register-btn" target="_blank">Click Here to Register</a>
+    </div>
+</body>
+</html>
